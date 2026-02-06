@@ -65,7 +65,7 @@ export default function ReportScreen() {
       severity,
       helpNeeded: selectedHelps,
     };
-    console.log('Sending payload:', payload); // [web:128][web:181]
+    console.log('Sending payload:', payload); // goes to backend /api/sos [web:128][web:181]
 
     try {
       const res = await fetch('http://localhost:4000/api/sos', {
@@ -151,7 +151,7 @@ export default function ReportScreen() {
       >
         <Text style={styles.title}>Emergency SOS</Text>
         <Text style={styles.subtitle}>
-          Tap options quickly and send an SOS in seconds.
+          Quickly share your situation so responders can help you faster.
         </Text>
 
         <View style={styles.card}>
@@ -288,7 +288,6 @@ const styles = StyleSheet.create({
     marginTop: 2,
   },
 
-  // SEVERITY ROW & CHIPS (side-by-side, left aligned, small gaps)
   severityRow: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -304,8 +303,8 @@ const styles = StyleSheet.create({
     backgroundColor: '#f0f6ff',
     minWidth: 80,
     alignItems: 'center',
-    marginRight: 8, // small space between LOW / MEDIUM / HIGH
-  }, // [web:226][web:229]
+    marginRight: 8,
+  }, // [web:226][web:229][web:279]
   severityChipActive: {
     backgroundColor: '#007bff',
   },
@@ -318,7 +317,6 @@ const styles = StyleSheet.create({
     color: 'white',
   },
 
-  // HELP chips
   wrapRow: {
     flexDirection: 'row',
     flexWrap: 'wrap',
